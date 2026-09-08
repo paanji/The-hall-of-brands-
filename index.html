@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Hall of Brands — Own a Piece of the Wall</title>
+<meta name="description" content="1,000,000 pixel blocks. Pick yours, put your brand on them, own them forever." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="hallofbrands.css?v=15" />
+</head>
+<body>
+
+  <header class="main-nav">
+    <div class="nav-inner">
+      <div class="brand-group">
+        <a href="#top" class="brand-mark">Hall of Brands</a>
+        <span class="nav-tagline">Own a Piece of the Wall — Forever.</span>
+      </div>
+      <nav aria-label="Primary">
+        <a href="#top">Home</a>
+        <a href="#how">How it works</a>
+        <a href="#grid-stage" class="nav-cta">Buy blocks</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <section class="brand-container">
+      <h1 class="main-title">The Wall Is Live</h1>
+      <p class="site-tagline">Pick your blocks, add your brand, own them for good.</p>
+    </section>
+
+    <section id="grid-stage" class="grid-stage">
+      <div class="grid-legend" aria-hidden="true">
+        <span><i class="swatch swatch-available"></i>Available</span>
+        <span><i class="swatch swatch-selected"></i>Selected</span>
+        <span><i class="swatch swatch-pending"></i>Reserved</span>
+      </div>
+
+      <div id="grid" role="grid" aria-label="40,000-block pixel grid"></div>
+
+      <p class="grid-hint">Click any open block to select it. Click again to deselect. Select as many as you need, then check out.</p>
+    </section>
+
+    <section id="how" class="page-section">
+      <h2>How it works</h2>
+      <p class="stat-strip">40,000 Blocks &bull; <span id="priceLabel">…</span> per Block</p>
+      <ol class="how-steps">
+        <li><strong>Pick your blocks.</strong> Click any open square on the grid above. Select as few or as many as your brand needs — build a logo shape, a strip, or a single square.</li>
+        <li><strong>Check out.</strong> Add your brand name, website link, and logo, then pay securely by card.</li>
+        <li><strong>Go live.</strong> Once payment clears, your logo appears on the wall automatically, linking straight to your site — permanently.</li>
+      </ol>
+      <p class="fine-print">Blocks are sold individually and are yours once payment is confirmed. Reserved (in-checkout) blocks are held for 15 minutes before releasing back to the pool if payment isn't completed.</p>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Hall of Brands.</p>
+    <p class="footer-links">
+      <a href="terms.html">Terms</a> &middot;
+      <a href="privacy.html">Privacy</a> &middot;
+      <a href="refund.html">Refunds &amp; Cancellations</a>
+    </p>
+  </footer>
+
+  <!-- Sticky selection bar -->
+  <div id="selectionBar" class="selection-bar">
+    <div class="selection-info">
+      <strong id="selCount">0</strong> blocks selected · <span id="selPrice">₹0</span>
+    </div>
+    <div class="selection-actions">
+      <button type="button" id="clearSelection" class="btn btn-ghost">Clear</button>
+      <button type="button" id="buySelection" class="btn btn-primary">Buy selected blocks</button>
+    </div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div id="checkoutModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <button type="button" class="close" aria-label="Close">&times;</button>
+      <h2>Claim your blocks</h2>
+      <p id="checkoutSummary" class="checkout-summary"></p>
+      <form id="checkoutForm" novalidate>
+        <label for="brandName">Brand name</label>
+        <input type="text" id="brandName" name="brand" required maxlength="80" placeholder="e.g. Mama's Touch" />
+
+        <label for="websiteUrl">Website link</label>
+        <input type="url" id="websiteUrl" name="website" required placeholder="https://yourbrand.com" />
+
+        <label for="contactEmail">Email</label>
+        <input type="email" id="contactEmail" name="email" required placeholder="you@yourbrand.com" />
+
+        <label for="logoFile">Block image</label>
+        <input type="file" id="logoFile" name="logo" accept="image/png,image/jpeg,image/webp,image/svg+xml" required />
+        <p class="field-hint">Doesn't have to be a logo — any image works (banner slice, artwork, meme, whatever fits your brand). Square images look best; they'll be cropped to fit your blocks.</p>
+
+        <label for="hoverText">Hover text (optional)</label>
+        <input type="text" id="hoverText" name="caption" maxlength="120" placeholder="e.g. Mama's Touch — handmade skincare" />
+        <p class="field-hint">Shown as a tooltip when someone hovers over your block. Leave blank to just use your brand name.</p>
+
+        <div id="checkoutError" class="checkout-error" role="alert" hidden></div>
+
+        <button type="submit" class="btn btn-primary btn-block" id="checkoutSubmit">Continue to payment</button>
+        <div id="paypalButtonContainer" hidden></div>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script src="hallofbrands.js?v=15"></script>
+</body>
+</html>

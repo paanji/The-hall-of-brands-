@@ -1,0 +1,24 @@
+# Real secrets — never commit these. Copy from the .example.php versions
+# and fill in your actual keys locally; that copy stays untracked.
+.private/config.php
+.private/admin_config.php
+.private/admin_attempts.json
+
+# Live customer/order data — this is real business data, not something
+# that belongs in version history. data/blocks.example.json (an empty {})
+# is tracked instead, as a template for a fresh setup.
+data/blocks.json
+
+# Uploaded client logos — real client assets, not code. Keep the folders
+# and their protective .htaccess files in git via explicit negation, but
+# not the actual uploaded logo files.
+uploads/clients/*
+uploads/pending/*
+!uploads/clients/.gitkeep
+!uploads/pending/.gitkeep
+!uploads/pending/.htaccess
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
+*.swp
