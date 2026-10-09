@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CM7V5YLDSZ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-CM7V5YLDSZ');
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Hall of Brands — Own a Piece of the Wall</title>
@@ -8,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="hallofbrands.css?v=15" />
+<link rel="stylesheet" href="hallofbrands.css?v=20" />
 </head>
 <body>
 
@@ -58,12 +67,14 @@
 
   </main>
 
-<p class="footer-links">
-  <a href="terms.html">Terms</a> &middot;
-  <a href="privacy.html">Privacy</a> &middot;
-  <a href="refund.html">Refunds &amp; Cancellations</a> &middot;
-  <a href="https://www.allaidunia.com">AI Tools Directory</a>
-</p>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Hall of Brands.</p>
+    <p class="footer-links">
+      <a href="terms.html">Terms</a> &middot;
+      <a href="privacy.html">Privacy</a> &middot;
+      <a href="refund.html">Refunds &amp; Cancellations</a> &middot;
+      <a href="https://www.allaidunia.com">AI Tools Directory</a>
+    </p>
   </footer>
 
   <!-- Sticky selection bar -->
@@ -88,7 +99,7 @@
         <input type="text" id="brandName" name="brand" required maxlength="80" placeholder="e.g. Mama's Touch" />
 
         <label for="websiteUrl">Website link</label>
-        <input type="url" id="websiteUrl" name="website" required placeholder="https://yourbrand.com" />
+        <input type="text" id="websiteUrl" name="website" required placeholder="https://yourbrand.com" />
 
         <label for="contactEmail">Email</label>
         <input type="email" id="contactEmail" name="email" required placeholder="you@yourbrand.com" />
@@ -110,6 +121,6 @@
   </div>
 
   <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
-  <script src="hallofbrands.js?v=15"></script>
+  <script src="hallofbrands.js?v=20"></script>
 </body>
 </html>
